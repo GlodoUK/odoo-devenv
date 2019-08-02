@@ -4,8 +4,8 @@
 ### Linux using Docker (natively installed)
   1. Ensure both docker CE and docker-compose are installed through your distro's package manager
   2. Ensure your git email and name are correctly configured
-    * Run `git config --global user.email "youremail"`
-    * Run `git config --global user.name "your name"`
+     * Run `git config --global user.email "youremail"`
+     * Run `git config --global user.name "your name"`
   3. Follow any project specific instructions past
 
 ### MacOS, Windows or Linux using Virtual Machines
@@ -14,23 +14,23 @@ It is recommended to use Docker natively on Linux, rather than VMs.
 It is *not* recommended to use a VM per-project, at this time, but reuse it for multiple projects.
 
   1. Ensure one of the following virtualisation environments are installed;
-    * VirtualBox
-    * Parallels
-    * HyperV [1]
-    * libvirt [2]
+     * VirtualBox
+     * Parallels
+     * HyperV [1]
+     * libvirt [2]
   2. Ensure [vagrant](https://www.vagrantup.com/) is installed
   3. Clone this repository and run `vagrant up` from the checked out directory
   4. Your development environment is now setup
-    * Run `vagrant ssh` to enter the VM
-      * Run `git config --global user.email "youremail"`
-      * Run `git config --global user.name "your name"`
-      * Ensure you clone any projects from within the VM, into `~/Code`
-      * You can access `~/Code` from the host by following the network sharing
-        instructions from the `vagrant up` command.
-    * From the host, in a terminal window open to the cloned directory:
-      * To shutdown the VM you can issue `vagrant halt` at anytime
-      * To boot up the VM you can issue `vagrant up` at anytime
-      * To destroy the VM you can issue `vagrant destroy` at anytime
+     * Run `vagrant ssh` to enter the VM
+       * Run `git config --global user.email "youremail"`
+       * Run `git config --global user.name "your name"`
+       * Ensure you clone any projects from within the VM, into `~/Code`
+       * You can access `~/Code` from the host by following the network sharing
+         instructions from the `vagrant up` command.
+     * From the host, in a terminal window open to the cloned directory:
+       * To shutdown the VM you can issue `vagrant halt` at anytime
+       * To boot up the VM you can issue `vagrant up` at anytime
+       * To destroy the VM you can issue `vagrant destroy` at anytime
   5. Follow any project specific instructions
 
 [1] Due to how Hyper-V works you will see issues with port forwarding, etc. not working as expected. 
@@ -42,11 +42,11 @@ It is *not* recommended to use a VM per-project, at this time, but reuse it for 
 
   1. If not already installed, install Ubuntu from the Windows App Store
   2. Open the Ubuntu WSL instance from the start menu
-    * Run `mkdir -p ~/Code && cd ~/Code`
-    * Clone this repository and run `./provison.sh`
-    * Close and reopen the WSL instance
+     * Run `mkdir -p ~/Code && cd ~/Code`
+     * Clone this repository and run `./provison.sh`
+     * Close and reopen the WSL instance
   3. You can access `~/Code` from the host by following the path `\\wsl$\Ubuntu\home\YOURUSERNAME\Code`
-    * Ensure you clone any projects from within the WSL instance, under `~/Code`
+     * Ensure you clone any projects from within the WSL instance, under `~/Code`
   4. Follow any project specific instructions
 
 [1] As of time of writing WSL2 is only available on Windows 10 build 18917 (Insider at time of writing). 
