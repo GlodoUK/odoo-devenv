@@ -52,6 +52,9 @@ It is *not* recommended to use a VM per-project, at this time, but reuse it for 
 [1] As of time of writing WSL2 is only available on Windows 10 build 18917 (Insider at time of writing). 
 See https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
 
+## Editor/IDE Setup
+  * Use any editor you like, as long as it has support for [editorconfig](https://editorconfig.org/)
+
 ## General Dockery-odoo Development Tips
   * Edit your code on your desktop using any editor of your choice. Code should hot reload.
   * With the web debugger enabled (which it is by default) any exceptions that occur will result in a clickable link in the Odoo logs.
