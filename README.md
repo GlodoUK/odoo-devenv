@@ -43,7 +43,7 @@ It is *not* recommended to use a VM per-project, at this time, but reuse it for 
   1. If not already installed, install Ubuntu from the Windows App Store
   2. Open the Ubuntu WSL instance from the start menu
      * Run `mkdir -p ~/Code && cd ~/Code`
-     * Clone this repository and run `./provison.sh`
+     * Clone this repository and run `./provision.sh`
      * Close and reopen the WSL instance
   3. You can access `~/Code` from the host by following the path `\\wsl$\Ubuntu\home\YOURUSERNAME\Code`
      * Ensure you clone any projects from within the WSL instance, under `~/Code`
@@ -55,7 +55,7 @@ See https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
 ## Editor/IDE Setup
   * Use any editor you like, as long as it has support for [editorconfig](https://editorconfig.org/)
 
-## General Dockery-odoo Development Tips
+## General Dockery-Odoo Development Tips
   * Edit your code on your desktop using any editor of your choice. Code should hot reload.
   * With the web debugger enabled (which it is by default) any exceptions that occur will result in a clickable link in the Odoo logs.
 
