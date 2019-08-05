@@ -1,21 +1,24 @@
 # Cross-platform Standardised Odoo Development Environment
 ## (for dockery-odoo based projects)
 
-### Linux using Docker (natively installed)
-  1. Ensure both docker CE and docker-compose are installed through your distro's package manager
+### Linux using Docker (Native)
+  1. Ensure both docker CE, docker-compose and git are installed through your distro's package manager
   2. Ensure your git email and name are correctly configured
      * Run `git config --global user.email "youremail"`
      * Run `git config --global user.name "your name"`
   3. Follow any project specific instructions past
 
 ### MacOS, Windows or Linux using Virtual Machines
-This will pre-configure a VM for you, with the necessary development environment pre-reqs.
-It is recommended to use Docker natively on Linux, rather than VMs.
-It is *not* recommended to use a VM per-project, at this time, but reuse it for multiple projects.
+  * This will pre-configure a VM for you, with the necessary development environment pre-reqs for most Odoo related projects
+    * The instructions will have you checkout all code inside the VM. This is to speed up disk access, and enable hot code reloading reliably across all OS'. If you attempt to do the reverse you'll have serious development slow downs.
+  * If you are on Linux, it is *highly* recommended to use Docker natively (see above), rather than VMs
+  * It is *not* recommended to use a VM per-project, at this time, but reuse it for multiple projects.
+  * If you are migrating from a previous version of our dev environment that uses Unison for file syncing between host and guest VM, ensure you have pushed any work to the origin repository, delete the existing VM and cloned repo(s) and start over with these instructions.
 
-  1. Ensure one of the following virtualisation environments are installed;
-     * VirtualBox
-     * Parallels
+  1. Ensure you have [git](https://git-scm.com/) (or any other git client installed), plus one of the following virtualisation environments are installed;
+     * [VirtualBox](https://www.virtualbox.org/)
+     * [Parallels](https://www.parallels.com/)
+     * VMware Fusion or Vagrant VMware Workstation
      * HyperV [1]
      * libvirt [2]
   2. Ensure [vagrant](https://www.vagrantup.com/) is installed
