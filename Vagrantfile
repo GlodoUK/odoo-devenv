@@ -30,5 +30,6 @@ Vagrant.configure("2") do |config|
   config.vm.post_up_message = "The VM has booted. "\
   "Run `vagrant ssh` to gain access to the VM. "\
   "Checkout any code into ~/Code, and run any docker-compose commands inside the VM. "\
-  "You should be able to access your VM's Code directory via #{PRIVATE_SHARE_PATH}, allowing you to edit from the comfort of your own desktop/tools. "
+  "You should be able to access your VM's Code directory via #{PRIVATE_SHARE_PATH}, allowing you to edit from the comfort of your own desktop/tools. "\
+  "Use `vagrant halt` to shutdown the VM. Use `vagrant up` to power it back up again. "
 end
