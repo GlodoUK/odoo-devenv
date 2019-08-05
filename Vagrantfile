@@ -3,7 +3,7 @@
 
 PRIVATE_IP = "192.168.50.4"
 
-PRIVATE_SHARE_PATH = if Vagrant::Util::Platform.windows? do
+PRIVATE_SHARE_PATH = if Vagrant::Util::Platform.windows? 
     "\\\\#{PRIVATE_IP}\\Code"
 else
     "smb://#{PRIVATE_IP}/Code"
