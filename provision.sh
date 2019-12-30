@@ -1,6 +1,11 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
 
+user="vagrant"
+if [ "$1" != "" ]; then
+        user=$1
+fi
+
 sed -i 's|http://us.|http://|g' /etc/apt/sources.list
 
 timedatectl set-timezone Europe/London
@@ -51,7 +56,7 @@ add-apt-repository \
 apt-get -yq update
 apt-get install -yq docker-ce
 
-usermod -a -G docker vagrant
+usermod -a -G docker $user
 
 pip install click docker-compose
 
@@ -63,10 +68,12 @@ echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
 # Lets get this working for now and revisit it later.
 cp -r /usr/local/lib/python2.7/dist-packages/backports/ssl_match_hostname/ /usr/lib/python2.7/dist-packages/backports
 
-# Add a network persistent network share for /home/vagrant/Code
-mkdir -p /home/vagrant/Code
-net usershare add code /home/vagrant/Code "~/Code Share" everyone:F guest_ok=yes
-net usershare info --long=code /var/lib/samba/usershares/code
-# Insecure. This'll have to do for now.
-chmod -R a+rwx /home/vagrant/Code
-setfacl -m "default:other:rwx" /home/vagrant/Code
+if [ $user == "vagrant" ]; then
+    # Add a network persistent network share for /home/vagrant/Code
+    mkdir -p /home/$user/Code
+    net usershare add code /home/$user/Code "~/Code Share" everyone:F guest_ok=yes
+    net usershare info --long=code /var/lib/samba/usershares/code
+    # Insecure. This'll have to do for now.
+    chmod -R a+rwx /home/$user/Code
+    setfacl -m "default:other:rwx" /home/$user/Code
+fi
