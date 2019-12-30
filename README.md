@@ -46,7 +46,7 @@
   1. If not already installed, install Ubuntu from the Windows App Store
   2. Open the Ubuntu WSL instance from the start menu
      * Run `mkdir -p ~/Code && cd ~/Code`
-     * Clone this repository and run `./provision.sh $USER`
+     * Clone this repository and run `sudo ./provision.sh $USER`
      * Close and reopen the WSL instance
   3. You can access `~/Code` from the host by following the path `\\wsl$\Ubuntu\home\YOURUSERNAME\Code`
      * Ensure you clone any projects from within the WSL instance, under `~/Code`
