@@ -46,6 +46,7 @@ apt-get install -yq \
     inotify-tools \
     git
 
+# install docker-ce
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 
 add-apt-repository \
@@ -56,24 +57,27 @@ add-apt-repository \
 apt-get -yq update
 apt-get install -yq docker-ce
 
+# add the user to the docker group so they dont need to keep running through sudo
 usermod -a -G docker $user
 
-pip install click docker-compose
+# grab docker-compose
+curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
 
-# Fixes issue specific to Hyper-V and docker-compose forwarding
+# fixes issue specific to Hyper-V and docker-compose forwarding
 sysctl -w net.ipv6.conf.all.forwarding=1
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
 
-# TODO: Why? What's gone wrong here?
-# Lets get this working for now and revisit it later.
-cp -r /usr/local/lib/python2.7/dist-packages/backports/ssl_match_hostname/ /usr/lib/python2.7/dist-packages/backports
-
 if [ $user == "vagrant" ]; then
-    # Add a network persistent network share for /home/vagrant/Code
+    # vagrant specific stuff. 
+    # this'll have to do for now.
+
+    # add a network persistent network share for /home/vagrant/Code
     mkdir -p /home/$user/Code
     net usershare add code /home/$user/Code "~/Code Share" everyone:F guest_ok=yes
     net usershare info --long=code /var/lib/samba/usershares/code
-    # Insecure. This'll have to do for now.
+    
+    # insecure. This'll have to do for now.
     chmod -R a+rwx /home/$user/Code
     setfacl -m "default:other:rwx" /home/$user/Code
 fi
