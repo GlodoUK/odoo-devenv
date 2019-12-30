@@ -42,6 +42,7 @@
 
 ### Windows using WSL (Windows Subsystem for Linux)
 :warning: Do not bother using WSL1. It's unusably slow. Ensure you are on WSL2[1] and your instance is using WSL2.
+
 :warning: Ensure you are running at least Windows 10 build 19037 or newer for WSL2. Prior versions are somewhat buggy.
 
   1. If not already installed, install Ubuntu from the Windows App Store
