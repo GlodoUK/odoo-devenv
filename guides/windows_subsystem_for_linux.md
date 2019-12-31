@@ -17,5 +17,9 @@
      * Ensure you clone any projects from within the WSL instance, under `~/Code`
   6. Follow any project specific instructions
 
+
+## Tips
+  * Mapping network drives to the `\\wsl$\Ubuntu\...` path sometimes fails across different Insider builds. However mapping directly to the distro via the GUI always works; https://github.com/microsoft/WSL/issues/3854#issuecomment-465886991
+
 [1] As of time of writing WSL2 is only available on Windows 10 build 18917 (Insider at time of writing). 
 See https://docs.microsoft.com/en-us/windows/wsl/wsl2-install

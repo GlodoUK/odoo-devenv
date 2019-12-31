@@ -6,11 +6,17 @@ You will need access to Linux and Docker for a development environment.
 Please choose from one of the following:
 
   * [Linux using Docker (Native)](guides/linux_native.md)
-  * [MacOS, Windows or Linux using Virtual Machines](guides/virtual_machine_using_vagrant.md)
   * [Windows using WSL (Windows Subsystem for Linux)](guides/windows_subsystem_for_linux.md)
+  * [MacOS, Windows or Linux using Virtual Machines](guides/virtual_machine_using_vagrant.md)
 
 ## Editor/IDE Setup
-  * Use any editor you like, as long as it has support for [editorconfig](https://editorconfig.org/)
+Use any editor you like, as long as it has support for [editorconfig](https://editorconfig.org/) and is enabled/installed.
+
+## Git client setup
+Ensure your git email and name are correctly configured, where ever you use it.
+
+ * Run `git config --global user.email "youremail"`
+ * Run `git config --global user.name "your name"`
 
 ## General Dockery-Odoo Development Tips
   * Edit your code on your desktop using any editor of your choice. Code should hot reload.
