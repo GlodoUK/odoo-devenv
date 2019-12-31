@@ -7,3 +7,4 @@
  * Please try and use the date format YYYY-MM-DD for any file names to avoid confusion.
  * Please focus on readability. If it's slow then we refactor. If it's unavoidable then we comment profusely.
  * TODOs are unavoidable. But if you come across one and it's covered by a unit test, and you have time, then look at resolving.
+ * Please ensure that .gitignore and .dockerignore are setup to ignore any editor swap/temporary files and git files.

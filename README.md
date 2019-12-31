@@ -2,18 +2,23 @@
 ## (for dockery-odoo based projects)
 
 Each project is setup as a series of containers, built from source code.
-You will need access to Linux and Docker for a development environment. 
-Please choose from one of the following:
+All Odoo projects (at this time) are based upon either the edge or stable versions of [Dockery](https://xoe-labs.github.io/dockery-odoo/).
+
+## Environment Setup
+You will need access to Linux and Docker for a supported development environment.
+This repository provides both guides and any applicable code for setting this up under the following:
 
   * [Linux using Docker (Native)](guides/linux_native.md)
   * [Windows using WSL (Windows Subsystem for Linux)](guides/windows_subsystem_for_linux.md)
   * [MacOS, Windows or Linux using Virtual Machines](guides/virtual_machine_using_vagrant.md)
 
-## Editor/IDE Setup
+### Editor/IDE Setup & Code Conventions
 Use any editor you like, as long as it has support for [editorconfig](https://editorconfig.org/) and is enabled/installed.
 
-## Git client setup
-Ensure your git email and name are correctly configured, where ever you use it.
+For further conventions please see [guides/code_conventions.md](guides/code_conventions.md).
+
+### Git Client Setup
+Ensure your git email and name are correctly configured, where ever you use it. If you are calling git from within WSL/VMs then please ensure it is configured within there as well.
 
  * Run `git config --global user.email "youremail"`
  * Run `git config --global user.name "your name"`

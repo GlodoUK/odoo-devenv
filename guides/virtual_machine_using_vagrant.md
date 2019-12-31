@@ -1,16 +1,13 @@
 # MacOS, Windows or Linux using Virtual Machines
   * This will pre-configure a VM for you, with the necessary development environment pre-reqs for most Odoo related projects
     * The instructions will have you checkout all code inside the VM. This is to speed up disk access, and enable hot code reloading reliably across all OS'. If you attempt to do the reverse you'll have serious development slow downs.
-  * If you are on Linux, it is *highly* recommended to use Docker natively (see above), rather than VMs
+  * If you are on Linux, it is *highly* recommended to use Docker natively, rather than VMs
   * It is *not* recommended to use a VM per-project, at this time, but reuse it for multiple projects.
   * If you are migrating from a previous version of our dev environment that uses Unison for file syncing between host and guest VM, ensure you have pushed any work to the origin repository, delete the existing VM and cloned repo(s) and start over with these instructions.
 
-  1. Ensure you have [git](https://git-scm.com/) (or any other git client installed), plus one of the following virtualisation environments are installed;
+  1. Ensure you have [git](https://git-scm.com/) (or any other git client installed), plus one of the following virtualisation environments are installed [1] [2];
      * [VirtualBox](https://www.virtualbox.org/)
-     * [Parallels](https://www.parallels.com/)
-     * VMware Fusion or Vagrant VMware Workstation
-     * HyperV [1]
-     * libvirt [2]
+     * libvirt [3]
   2. Ensure [vagrant](https://www.vagrantup.com/) is installed
   3. Clone this repository and run `vagrant up` from the checked out directory
   4. Your development environment is now setup
@@ -26,6 +23,7 @@
        * To destroy the VM you can issue `vagrant destroy` at anytime
   5. Follow any project specific instructions
 
-[1] Due to how Hyper-V works you will see issues with port forwarding, etc. not working as expected. 
+[1] We have not tested Parallels or VMWare. You are welcome to provide feedback/test.
+[2] Hyper-V is not recommended, but will work. Due to how Hyper-V works you will see issues with port forwarding, etc. not working as expected. 
     You will need to access the VM via the IP address assigned, rather than localhost.
-[2] Requires [libvirt provider](https://github.com/vagrant-libvirt/vagrant-libvirt) to be installed.
+[3] Requires third party [libvirt provider](https://github.com/vagrant-libvirt/vagrant-libvirt) to be installed.
