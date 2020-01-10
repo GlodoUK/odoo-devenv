@@ -32,7 +32,6 @@ Ensure your git email and name are correctly configured, where ever you use it. 
 ## General Dockery-Odoo Development Tips
   * Edit your code on your desktop using any editor of your choice. Code should hot reload.
   * With the web debugger enabled (which it is by default) any exceptions that occur will result in a clickable link in the Odoo logs.
-
   * Most dockery-odoo projects are setup with a docker-compose.yml, allowing you to
     * `docker-compose up odoo` will give you an Odoo install running at
       http://localhost/ with hot code reload enable and web debugger setup
