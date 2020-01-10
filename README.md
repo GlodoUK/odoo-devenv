@@ -16,7 +16,7 @@ This repository provides both guides and any applicable code for setting this up
   
   * You will want to periodically run `sudo docker system prune` to clean up any unused docker containers, images, etc.
   * You may also want to periodically run `sudo docker system prune --volumes`, this will also clean up volumes as well as containers, images, etc.
-  * If you are using a VM, you should also periodically run `sudo apt-get update && sudo apt-get upgrade`
+  * If you are using a VM, or WSL, you should also periodically run `sudo apt-get update && sudo apt-get upgrade`
 
 ### Editor/IDE Setup & Code Conventions
 Use any editor you like, as long as it has support for [editorconfig](https://editorconfig.org/) and is enabled/installed.
