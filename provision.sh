@@ -29,9 +29,14 @@ else
   fi
 fi
 
+# add the git ppa to get the latest git, rather than what LTS ships with
+add-apt-repository ppa:git-core/ppa
+
+# update and upgrade
 apt-get -yq update
 apt-get -yq upgrade
 
+# pull in anything that we may be missing
 apt-get install -yq \
     apt-transport-https \
     ca-certificates \
@@ -68,12 +73,14 @@ chmod +x /usr/local/bin/docker-compose
 sysctl -w net.ipv6.conf.all.forwarding=1
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
 
+# make sure we have our default path created
+mkdir -p /home/$user/Code
+
 if [ $user == "vagrant" ]; then
     # vagrant specific stuff. 
     # this'll have to do for now.
 
     # add a network persistent network share for /home/vagrant/Code
-    mkdir -p /home/$user/Code
     net usershare add code /home/$user/Code "~/Code Share" everyone:F guest_ok=yes
     net usershare info --long=code /var/lib/samba/usershares/code
     
