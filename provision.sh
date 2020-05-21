@@ -49,7 +49,10 @@ apt-get install -yq \
     samba \
     acl \
     inotify-tools \
-    git
+    git \
+    python3-pip \
+    python3-venv
+    
 
 # install docker-ce
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -88,3 +91,6 @@ if [ $user == "vagrant" ]; then
     chmod -R a+rwx /home/$user/Code
     setfacl -m "default:other:rwx" /home/$user/Code
 fi
+
+# Add .local/bin to .bashrc if it's not already there
+grep -qxF 'export PATH=$PATH:~/.local/bin/' ~/.bashrc || echo 'export PATH=$PATH:~/.local/bin/' >> ~/.bashrc
