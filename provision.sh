@@ -73,8 +73,13 @@ curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compo
 chmod +x /usr/local/bin/docker-compose
 
 # fixes issue specific to Hyper-V and docker-compose forwarding
-sysctl -w net.ipv6.conf.all.forwarding=1
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
+
+# raise inotify max watch
+echo fs.inotify.max_user_watches=524288 >> /etc/sysctl.conf
+
+# apply sysctl changes
+sysctl -p
 
 # make sure we have our default path created
 mkdir -p /home/$user/Code
