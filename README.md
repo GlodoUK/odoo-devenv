@@ -1,8 +1,11 @@
 # Cross-platform Standardised Odoo Development Environment
-## (for dockery-odoo based projects)
+## (for dockery-odoo and doodba based projects)
 
 Each project is setup as a series of containers, built from source code.
-All Odoo projects (at this time) are based upon either the edge or stable versions of [Dockery](https://xoe-labs.github.io/dockery-odoo/).
+
+All new Odoo projects are based on our [Doodba copier template](https://gitlab.glo.systems/odoo/scaffold).
+
+There are some existing projectsare based on either the edge or stable versions of [Dockery](https://xoe-labs.github.io/dockery-odoo/) that need migration.
 
 ## Environment Setup
 You will need access to Linux and Docker for a supported development environment.
