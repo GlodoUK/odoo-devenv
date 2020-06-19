@@ -14,9 +14,13 @@ Vagrant.configure("2") do |config|
   config.vm.box = "generic/ubuntu1804"
 
   config.vm.network "forwarded_port", guest: 80, host: 80
+  config.vm.network "forwarded_port", guest: 8025, host: 8025
   config.vm.network "forwarded_port", guest: 8069, host: 8069
   config.vm.network "forwarded_port", guest: 8072, host: 8072
   config.vm.network "forwarded_port", guest: 1984, host: 1984
+  config.vm.network "forwarded_port", guest: 11069, host: 11069
+  config.vm.network "forwarded_port", guest: 12069, host: 12069
+  config.vm.network "forwarded_port", guest: 13069, host: 13069
 
   config.vm.network "private_network", ip: PRIVATE_IP
 
