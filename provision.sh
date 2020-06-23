@@ -30,7 +30,7 @@ else
 fi
 
 # add the git ppa to get the latest git, rather than what LTS ships with
-add-apt-repository ppa:git-core/ppa
+add-apt-repository -y ppa:git-core/ppa
 
 # update and upgrade
 apt-get -yq update
