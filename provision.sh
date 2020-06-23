@@ -69,7 +69,7 @@ apt-get install -yq docker-ce
 usermod -a -G docker $user
 
 # grab docker-compose
-curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # fixes issue specific to Hyper-V and docker-compose forwarding
