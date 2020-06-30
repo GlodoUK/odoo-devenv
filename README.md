@@ -1,11 +1,8 @@
-# Cross-platform Standardised Odoo Development Environment
-## (for dockery-odoo and doodba based projects)
+# Bootstrapping Glodo's Odoo Development Environment
 
-Each project is setup as a series of containers, built from source code.
-
-All new Odoo projects are based on our [Doodba copier template](https://gitlab.glo.systems/odoo/scaffold).
-
-There are some existing projectsare based on either the edge or stable versions of [Dockery](https://xoe-labs.github.io/dockery-odoo/) that need migration.
+- This project will help you bootstrap a development environment for Linux (natively), WSL or a VM (through Vagrant)
+- Primarily it is designed to work with Ubuntu based distros
+- Each Odoo project is setup as a series of containers, built from source code, using Doodba - this is not covered under this repository
 
 ## Environment Setup
 You will need access to Linux and Docker for a supported development environment.
@@ -17,8 +14,8 @@ This repository provides both guides and any applicable code for setting this up
 
 ### Environment Maintenance
   
-  * You will want to periodically run `sudo docker system prune` to clean up any unused docker containers, images, etc.
-  * You may also want to periodically run `sudo docker system prune --volumes`, this will also clean up volumes as well as containers, images, etc.
+  * You will want to periodically run `docker system prune` to clean up any unused docker containers, images, etc.
+  * You may also want to periodically run `docker system prune --volumes`, this will also clean up volumes as well as containers, images, etc.
   * If you are using a VM, or WSL, you should also periodically run `sudo apt-get update && sudo apt-get upgrade`
 
 ### Editor/IDE Setup & Code Conventions
