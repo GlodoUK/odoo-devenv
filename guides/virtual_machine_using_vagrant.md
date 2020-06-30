@@ -24,6 +24,8 @@
   5. Follow any project specific instructions
 
 [1] We have not tested Parallels or VMWare. You are welcome to provide feedback/test.
+
 [2] Hyper-V is not recommended, but will work. Due to how Hyper-V works you will see issues with port forwarding, etc. not working as expected. 
     You will need to access the VM via the IP address assigned, rather than localhost.
+
 [3] Requires third party [libvirt provider](https://github.com/vagrant-libvirt/vagrant-libvirt) to be installed.
