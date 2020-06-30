@@ -2,6 +2,7 @@
 
 - This project will help you bootstrap a development environment for Linux (natively), WSL or a VM (through Vagrant)
 - Primarily it is designed to work with Ubuntu based distros
+- It is intended to be quick to setup across a series of devices and ensure all staff are working on a similar setup and are not having to debug too many platform issues
 - Each Odoo project is setup as a series of containers, built from source code, using Doodba - this is not covered under this repository
 
 ## Environment Setup
