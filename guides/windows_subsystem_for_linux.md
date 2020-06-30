@@ -1,7 +1,5 @@
 # Windows using WSL (Windows Subsystem for Linux)
-:warning: Do not bother using WSL1. It's unusably slow. Ensure you are on WSL2[1] and your instance is using WSL2.
-
-:warning: Ensure you are running at least Windows 10 build 19037 or newer for WSL2. Prior versions are somewhat buggy.
+:warning: Ensure you using WSL2[1] and your instance is using WSL2. WSL1 is unusably slow for Odoo and . It's unusably slow.
 
   1. Ensure WSL is installed - https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
   2. Ensure you are using WSL2 by default `wsl --set-default-version 2`
@@ -23,4 +21,4 @@
   * Mapping network drives to the `\\wsl$\Ubuntu\...` path sometimes fails across different Insider builds
     However mapping directly to the distro via the GUI always works; https://github.com/microsoft/WSL/issues/3854#issuecomment-465886991
 
-[1] As of time of writing WSL2 is only available on Windows 10 Release 2004, or Windows 10 Insider >= build 18917
+[1] As of time of writing WSL2 is only available on Windows 10 Release 2004, or Windows 10 Insider >= build 18917. If you are on insider builds ensure you are running >= build 19037 (prior versions are somewhat buggy).
