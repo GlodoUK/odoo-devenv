@@ -97,5 +97,8 @@ if [ $user == "vagrant" ]; then
     setfacl -m "default:other:rwx" /home/$user/Code
 fi
 
+# Add Doodba dependencies
+sudo -u $user bash -c "python3 -m pip install --user pipx && pipx install copier && pipx install invoke && pipx install pre-commit && pipx ensurepath"
+
 # Add .local/bin to .bashrc if it's not already there
 grep -qxF 'export PATH=$PATH:~/.local/bin/' ~/.bashrc || echo 'export PATH=$PATH:~/.local/bin/' >> ~/.bashrc
