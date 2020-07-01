@@ -10,8 +10,7 @@ else
 end
 
 Vagrant.configure("2") do |config|
-  # We're on 1804 as 1904 seems to be misbehaving currently.
-  config.vm.box = "generic/ubuntu1804"
+  config.vm.box = "generic/ubuntu2004"
 
   config.vm.network "forwarded_port", guest: 80, host: 80
   config.vm.network "forwarded_port", guest: 8025, host: 8025
