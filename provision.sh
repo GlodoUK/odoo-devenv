@@ -45,7 +45,6 @@ apt-get install -yq \
     software-properties-common \
     build-essential \
     python \
-    python-pip \
     samba \
     acl \
     inotify-tools \
@@ -98,7 +97,7 @@ if [ $user == "vagrant" ]; then
 fi
 
 # Add Doodba dependencies
-sudo -u $user bash -c "python3 -m pip install --user pipx && pipx install copier && pipx install invoke && pipx install pre-commit && pipx ensurepath"
+sudo -u $user bash -c "python3 -m pip install --user pipx && ~/.local/bin/pipx install copier && ~/.local/bin/pipx install invoke && ~/.local/bin/pipx install pre-commit && ~/.local/bin/pipx ensurepath"
 
 # Add .local/bin to .bashrc if it's not already there
 grep -qxF 'export PATH=$PATH:~/.local/bin/' ~/.bashrc || echo 'export PATH=$PATH:~/.local/bin/' >> ~/.bashrc
