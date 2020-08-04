@@ -71,6 +71,15 @@ usermod -a -G docker $user
 curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
+# grab kubectl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
+apt-get update
+apt-get install -yq kubectl
+
+# grab teleport
+curl -L https://get.gravitational.com/teleport_4.3.2_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
+
 # fixes issue specific to Hyper-V and docker-compose forwarding
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
 
