@@ -68,7 +68,7 @@ apt-get install -yq docker-ce
 usermod -a -G docker $user
 
 # grab docker-compose
-curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
 # grab kubectl
@@ -78,7 +78,7 @@ apt-get update
 apt-get install -yq kubectl
 
 # grab teleport
-curl -L https://get.gravitational.com/teleport_4.3.2_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
+curl -L https://get.gravitational.com/teleport_4.4.5_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
 
 # fixes issue specific to Hyper-V and docker-compose forwarding
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
@@ -104,6 +104,9 @@ if [ $user == "vagrant" ]; then
     chmod -R a+rwx /home/$user/Code
     setfacl -m "default:other:rwx" /home/$user/Code
 fi
+
+# Add python development dependencies
+sudo -u $user bash -c "python3 -m pip install --user install black flake8 jedi jedi_language_server pandas"
 
 # Add Doodba dependencies
 sudo -u $user bash -c "python3 -m pip install --user pipx && ~/.local/bin/pipx install copier && ~/.local/bin/pipx install invoke && ~/.local/bin/pipx install pre-commit && ~/.local/bin/pipx ensurepath"
