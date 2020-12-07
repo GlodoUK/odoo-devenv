@@ -6,8 +6,8 @@ if [ "$1" != "" ]; then
         user=$1
 fi
 
+# Some vagrant images are hard-coded with US sources
 sed -i 's|http://us.|http://|g' /etc/apt/sources.list
-
 timedatectl set-timezone Europe/London
 
 apt-get remove -yq snapd
