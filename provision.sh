@@ -78,7 +78,7 @@ apt-get update
 apt-get install -yq kubectl
 
 # grab teleport
-curl -L https://get.gravitational.com/teleport_4.4.5_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
+curl -L https://get.gravitational.com/teleport_5.0.2_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
 
 # fixes issue specific to Hyper-V and docker-compose forwarding
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
