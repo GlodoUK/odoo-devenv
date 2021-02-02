@@ -71,14 +71,16 @@ usermod -a -G docker $user
 curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 
-# grab kubectl
+# grab kubectl, helm, etc.
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+curl https://baltocdn.com/helm/signing.asc | apt-key add -
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | tee -a /etc/apt/sources.list.d/kubernetes.list
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | tee /etc/apt/sources.list.d/helm-stable-debian.list
 apt-get update
-apt-get install -yq kubectl
+apt-get install -yq kubectl helm
 
 # grab teleport
-curl -L https://get.gravitational.com/teleport_5.0.2_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
+curl -L https://get.gravitational.com/teleport_5.1.2_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
 
 # fixes issue specific to Hyper-V and docker-compose forwarding
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
