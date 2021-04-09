@@ -51,7 +51,6 @@ apt-get install -yq \
     git \
     python3-pip \
     python3-venv
-    
 
 # install docker-ce
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -80,7 +79,10 @@ apt-get update
 apt-get install -yq kubectl helm
 
 # grab teleport
-curl -L https://get.gravitational.com/teleport_5.1.2_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
+curl -L https://get.gravitational.com/teleport_6.0.3_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
+
+# grab sops
+curl -L https://github.com/mozilla/sops/releases/download/v3.7.1/sops_3.7.1_amd64.deb -o /tmp/sops.deb && dpkg -i /tmp/sops.deb
 
 # fixes issue specific to Hyper-V and docker-compose forwarding
 echo net.ipv6.conf.all.forwarding=1 >> /etc/sysctl.conf
