@@ -79,7 +79,10 @@ apt-get update
 apt-get install -yq kubectl helm
 
 # grab teleport
-curl -L https://get.gravitational.com/teleport_6.0.3_amd64.deb -o /tmp/teleport.deb && dpkg -i /tmp/teleport.deb
+curl https://deb.releases.teleport.dev/teleport-pubkey.asc | sudo apt-key add -
+add-apt-repository 'deb https://deb.releases.teleport.dev/ stable main'
+apt-get update
+apt-get install -yq teleport
 
 # grab sops
 curl -L https://github.com/mozilla/sops/releases/download/v3.7.1/sops_3.7.1_amd64.deb -o /tmp/sops.deb && dpkg -i /tmp/sops.deb
