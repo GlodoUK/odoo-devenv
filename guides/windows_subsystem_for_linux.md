@@ -1,5 +1,5 @@
 # Windows using WSL (Windows Subsystem for Linux)
-:warning: Ensure you using WSL2[1] and your instance is using WSL2. WSL1 is unusably slow for Odoo and . It's unusably slow.
+:warning: Ensure you using WSL2 and your instance is using WSL2. WSL1 is unusably slow for Odoo due to the file system performance.
 
   1. Ensure WSL is installed - https://docs.microsoft.com/en-us/windows/wsl/wsl2-install
   2. Ensure you are using WSL2 by default `wsl --set-default-version 2`
@@ -11,14 +11,19 @@
   3. Shutdown and restart the WSL instance. Although you can workaround the core need for this, I've found failure to do so results in other oddities.
      * Run `wsl --shutdown Ubuntu` from Windows (not within the Ubuntu WSL instance)
      * Restart the WSL instance
-  4. If you are running WSL1, after the first start up (everytime you reboot) you will need to run `sudo service docker start`
-  5. You can access `~/Code` from the host by following the path `\\wsl$\Ubuntu\home\YOURUSERNAME\Code`
+  4. You may need to run `sudo service docker start` at start up. If you are running recent version of WSL and Windows, you can bypass this by adding the following to `/etc/wsl.conf` using your preferred editor.
+     ```
+     [boot]
+     systemd=true
+     ```
+  6. You can access `~/Code` from the host by following the path `\\wsl$\Ubuntu\home\YOURUSERNAME\Code`
      * Ensure you clone any projects from within the WSL instance, under `~/Code`
-  6. Follow any project specific instructions
-
+  8. Running `code .` from 
+  7. Follow any project specific instructions
 
 ## Tips
   * Mapping network drives to the `\\wsl$\Ubuntu\...` path sometimes fails across different Insider builds
     However mapping directly to the distro via the GUI always works; https://github.com/microsoft/WSL/issues/3854#issuecomment-465886991
+  * Either cmdr, or Windows Terminal[1] is highly recommended over the default cmd/powershell terminal emulators
 
-[1] As of time of writing WSL2 is only available on Windows 10 Release 2004, or Windows 10 Insider >= build 18917. If you are on insider builds ensure you are running >= build 19037 (prior versions are somewhat buggy).
+[1] https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-gb&gl=gb
