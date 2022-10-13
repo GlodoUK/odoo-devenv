@@ -18,7 +18,7 @@
      ```
   6. You can access `~/Code` from the host by following the path `\\wsl$\Ubuntu\home\YOURUSERNAME\Code`
      * Ensure you clone any projects from within the WSL instance, under `~/Code`
-  8. Running `code .` from 
+  8. Running `code .` from within WSL should start up a VSCode instance on your desktop
   7. Follow any project specific instructions
 
 ## Tips
