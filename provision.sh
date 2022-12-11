@@ -44,7 +44,6 @@ apt-get install -yq \
     gnupg-agent \
     software-properties-common \
     build-essential \
-    python \
     samba \
     acl \
     inotify-tools \
